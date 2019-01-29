@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+package-lock
 
 # dependencies
 /node_modules
