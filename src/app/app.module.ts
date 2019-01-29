@@ -10,8 +10,11 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    // Add .withServerTransition() to support Universal rendering.
+    // The application ID can be any identifier which is unique on
+    // the page.
+    BrowserModule.withServerTransition({appId: 'PWA'}),
   ],
   providers: [],
   bootstrap: [AppComponent]
